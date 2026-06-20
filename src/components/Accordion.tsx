@@ -2,9 +2,6 @@ import { type ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/cn";
 
-// ponytail: native <details>/<summary> gives open/close + keyboard + a11y for free.
-// Moon's design is just sizing + a rotating chevron on top — no React state needed.
-
 const accordion = cva(
   "group rounded-[8px] bg-surface text-text border border-border [&[open]>summary>svg]:rotate-180",
   {
@@ -20,11 +17,9 @@ const accordion = cva(
   },
 );
 
-// Padding per size — shared by the summary (header) and the content panel.
 const PAD = { sm: "p-2", md: "px-3 py-2", lg: "p-3", xl: "p-4" } as const;
 
 const summary = cva(
-  // marker:hidden kills the native disclosure triangle; focus ring follows Moon state model.
   "flex cursor-pointer list-none items-center gap-2 font-bold marker:hidden outline-none focus-visible:outline-2 focus-visible:outline-text focus-visible:outline-offset-2",
   {
     variants: { size: PAD },
@@ -37,7 +32,7 @@ export interface AccordionProps
     VariantProps<typeof accordion>,
     Omit<React.DetailsHTMLAttributes<HTMLDetailsElement>, "title"> {
   title: ReactNode;
-  /** Optional leading element (icon) before the title. */
+
   leading?: ReactNode;
   children: ReactNode;
 }

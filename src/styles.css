@@ -1,22 +1,19 @@
 @import "tailwindcss";
 
-/* Dark mode driven by a `.dark` class on an ancestor (set it on <html>). */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Semantic tokens — values flip per theme; names map to Moon's codenames in comments.
-   ponytail: only the tokens currently used by components live here; add rows as needed. */
 :root {
-  --color-primary: #4e46b4; /* piccolo */
-  --color-primary-tint: #4e46b41f; /* jiren */
-  --color-accent: #40a69f; /* hit */
-  --color-background: #f5f5f5; /* goku */
-  --color-surface: #ffffff; /* gohan */
-  --color-surface-raised: #ffffff; /* goten */
-  --color-text: #000000; /* bulma */
-  --color-text-muted: #595d62; /* trunks */
-  --color-border: #e2e2e2; /* beerus */
-  --color-overlay: #0000008f; /* zeno */
-  --color-hover: #0000000a; /* heles */
+  --color-primary: #4e46b4;
+  --color-primary-tint: #4e46b41f;
+  --color-accent: #40a69f;
+  --color-background: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #595d62;
+  --color-border: #e2e2e2;
+  --color-overlay: #0000008f;
+  --color-hover: #0000000a;
 }
 
 .dark {
@@ -33,13 +30,10 @@
   --color-hover: #ffffff14;
 }
 
-/* Native Tailwind shadow-sm/md/lg/xl cover Moon's elevation tiers. Default shadow
-   color is near-black — barely visible on dark surfaces — so darken it under .dark. */
 .dark {
   --tw-shadow-color: rgb(0 0 0 / 0.6);
 }
 
-/* `inline` so utilities resolve to the var at use-site and flip with `.dark`. */
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-tint: var(--color-primary-tint);
@@ -55,19 +49,15 @@
 
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
-  /* Semantic status colors (Moon "supportive") — constant across themes.
-     Each has a -tint (12%) for colourful-style backgrounds. */
-  --color-success: #2e7d32; /* roshi */
+  --color-success: #2e7d32;
   --color-success-tint: #2e7d321f;
-  --color-error: #d33030; /* dodoria */
+  --color-error: #d33030;
   --color-error-tint: #d330301f;
-  --color-warning: #ffb319; /* krillin */
+  --color-warning: #ffb319;
   --color-warning-tint: #ffb3191f;
-  --color-info: #3448f0; /* whis */
+  --color-info: #3448f0;
   --color-info-tint: #3448f01f;
 
-  /* Moon UI Type scale — each size carries its line-height + tracking, so `text-3xl`
-     applies all three. Weight is chosen at use-site (font-normal / font-bold). */
   --text-3xs: 9px;
   --text-3xs--line-height: 16px;
   --text-2xs: 10px;
@@ -103,6 +93,5 @@
   --text-8xl--line-height: 76px;
   --text-8xl--letter-spacing: -2.5px;
 
-  /* Moon layout: 1328px preferred container (Full HD). Enables `max-w-container`. */
   --container-container: 1328px;
 }

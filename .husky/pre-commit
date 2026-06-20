@@ -1,2 +1,9 @@
 npx lint-staged
 npm run typecheck
+
+if git diff --cached --name-only --diff-filter=d | grep -qE '\.css$'; then
+  if git diff --cached --name-only --diff-filter=d | grep -E '\.css$' | xargs grep -lF '/*' 2>/dev/null; then
+    echo "✖ Comments are forbidden in CSS files (see above)."
+    exit 1
+  fi
+fi

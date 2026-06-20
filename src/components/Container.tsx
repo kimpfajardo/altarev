@@ -3,7 +3,6 @@ import { cn } from "../lib/cn";
 
 export type ContainerProps = HTMLAttributes<HTMLDivElement>;
 
-/** Centered page container — max 1328px (Moon), responsive horizontal gutter. */
 export function Container({ className, ...props }: ContainerProps) {
   return (
     <div
