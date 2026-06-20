@@ -10,3 +10,4 @@ export {
   type BreadcrumbItem,
 } from "./components/Breadcrumbs";
 export { Button, buttonVariants, type ButtonProps } from "./components/Button";
+export { Carousel, type CarouselProps } from "./components/Carousel";
