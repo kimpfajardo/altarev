@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* ponytail: Tailwind v4 is CSS-first — design tokens go here, not a JS config.
+   Add @theme overrides (--color-*, --font-*, etc.) as the system grows. */
+@theme {
+}
