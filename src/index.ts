@@ -4,3 +4,8 @@ export { Accordion, type AccordionProps } from "./components/Accordion";
 export { Alert, type AlertProps } from "./components/Alert";
 export { Avatar, type AvatarProps } from "./components/Avatar";
 export { AuthCode, type AuthCodeProps } from "./components/AuthCode";
+export {
+  Breadcrumbs,
+  type BreadcrumbsProps,
+  type BreadcrumbItem,
+} from "./components/Breadcrumbs";
