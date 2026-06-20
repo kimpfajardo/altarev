@@ -57,6 +57,7 @@
   --color-warning-tint: #ffb3191f;
   --color-info: #3448f0;
   --color-info-tint: #3448f01f;
+  --color-input-error: #ff4e64;
 
   --text-3xs: 9px;
   --text-3xs--line-height: 16px;
