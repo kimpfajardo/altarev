@@ -11,3 +11,4 @@ export {
 } from "./components/Breadcrumbs";
 export { Button, buttonVariants, type ButtonProps } from "./components/Button";
 export { Carousel, type CarouselProps } from "./components/Carousel";
+export { Checkbox, type CheckboxProps } from "./components/Checkbox";
