@@ -55,6 +55,17 @@
 
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
+  /* Semantic status colors (Moon "supportive") — constant across themes.
+     Each has a -tint (12%) for colourful-style backgrounds. */
+  --color-success: #2e7d32; /* roshi */
+  --color-success-tint: #2e7d321f;
+  --color-error: #d33030; /* dodoria */
+  --color-error-tint: #d330301f;
+  --color-warning: #ffb319; /* krillin */
+  --color-warning-tint: #ffb3191f;
+  --color-info: #3448f0; /* whis */
+  --color-info-tint: #3448f01f;
+
   /* Moon UI Type scale — each size carries its line-height + tracking, so `text-3xl`
      applies all three. Weight is chosen at use-site (font-normal / font-bold). */
   --text-3xs: 9px;
