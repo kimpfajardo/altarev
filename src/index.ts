@@ -9,3 +9,4 @@ export {
   type BreadcrumbsProps,
   type BreadcrumbItem,
 } from "./components/Breadcrumbs";
+export { Button, buttonVariants, type ButtonProps } from "./components/Button";
