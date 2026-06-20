@@ -1,6 +1,54 @@
 @import "tailwindcss";
 
-/* ponytail: Tailwind v4 is CSS-first — design tokens go here, not a JS config.
-   Add @theme overrides (--color-*, --font-*, etc.) as the system grows. */
-@theme {
+/* Dark mode driven by a `.dark` class on an ancestor (set it on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic tokens — values flip per theme; names map to Moon's codenames in comments.
+   ponytail: only the tokens currently used by components live here; add rows as needed. */
+:root {
+  --color-primary: #4e46b4; /* piccolo */
+  --color-primary-tint: #4e46b41f; /* jiren */
+  --color-accent: #40a69f; /* hit */
+  --color-background: #f5f5f5; /* goku */
+  --color-surface: #ffffff; /* gohan */
+  --color-surface-raised: #ffffff; /* goten */
+  --color-text: #000000; /* bulma */
+  --color-text-muted: #595d62; /* trunks */
+  --color-border: #e2e2e2; /* beerus */
+  --color-overlay: #0000008f; /* zeno */
+  --color-hover: #0000000a; /* heles */
+}
+
+.dark {
+  --color-primary: #4e46b4;
+  --color-primary-tint: #4e46b452;
+  --color-accent: #40a69f;
+  --color-background: #0b0b0b;
+  --color-surface: #1f1f1f;
+  --color-surface-raised: #ffffff;
+  --color-text: #ffffff;
+  --color-text-muted: #595d62;
+  --color-border: #444444;
+  --color-overlay: #0000008f;
+  --color-hover: #ffffff14;
+}
+
+/* `inline` so utilities resolve to the var at use-site and flip with `.dark`. */
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-tint: var(--color-primary-tint);
+  --color-accent: var(--color-accent);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
+  --color-overlay: var(--color-overlay);
+  --color-hover: var(--color-hover);
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Moon layout: 1328px preferred container (Full HD). Enables `max-w-container`. */
+  --container-container: 1328px;
 }
