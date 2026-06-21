@@ -16,6 +16,7 @@ export { Chip, type ChipProps } from "./components/Chip";
 export { Popover, type PopoverProps } from "./components/Popover";
 export { Drawer, type DrawerProps } from "./components/Drawer";
 export { Loader, type LoaderProps } from "./components/Loader";
+export { Modal, type ModalProps } from "./components/Modal";
 export {
   Dropdown,
   DropdownItem,
