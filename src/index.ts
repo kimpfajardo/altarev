@@ -2,6 +2,7 @@ export { cn } from "./lib/cn";
 export { Container, type ContainerProps } from "./components/Container";
 export { Accordion, type AccordionProps } from "./components/Accordion";
 export { Alert, type AlertProps } from "./components/Alert";
+export { EmptyState, type EmptyStateProps } from "./components/EmptyState";
 export { Avatar, type AvatarProps } from "./components/Avatar";
 export { AuthCode, type AuthCodeProps } from "./components/AuthCode";
 export {
