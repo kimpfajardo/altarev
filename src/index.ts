@@ -16,6 +16,12 @@ export { Chip, type ChipProps } from "./components/Chip";
 export { Popover, type PopoverProps } from "./components/Popover";
 export { Drawer, type DrawerProps } from "./components/Drawer";
 export {
+  Dropdown,
+  DropdownItem,
+  type DropdownProps,
+  type DropdownItemProps,
+} from "./components/Dropdown";
+export {
   Combobox,
   filterOptions,
   type ComboboxProps,
