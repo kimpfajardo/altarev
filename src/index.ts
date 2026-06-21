@@ -20,6 +20,7 @@ export {
   type SegmentedControlProps,
   type SegmentedItem,
 } from "./components/SegmentedControl";
+export { Select, type SelectProps } from "./components/Select";
 export { Popover, type PopoverProps } from "./components/Popover";
 export { Drawer, type DrawerProps } from "./components/Drawer";
 export { Loader, type LoaderProps } from "./components/Loader";
