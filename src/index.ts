@@ -31,6 +31,12 @@ export {
 } from "./components/Tabs";
 export { Select, type SelectProps } from "./components/Select";
 export { TextInput, type TextInputProps } from "./components/TextInput";
+export {
+  TextInputGroup,
+  GroupField,
+  type TextInputGroupProps,
+  type GroupFieldProps,
+} from "./components/TextInputGroup";
 export { Textarea, type TextareaProps } from "./components/Textarea";
 export { Switch, type SwitchProps } from "./components/Switch";
 export {
