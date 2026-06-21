@@ -13,3 +13,10 @@ export { Button, buttonVariants, type ButtonProps } from "./components/Button";
 export { Carousel, type CarouselProps } from "./components/Carousel";
 export { Checkbox, type CheckboxProps } from "./components/Checkbox";
 export { Chip, type ChipProps } from "./components/Chip";
+export { Popover, type PopoverProps } from "./components/Popover";
+export {
+  Combobox,
+  filterOptions,
+  type ComboboxProps,
+  type ComboboxOption,
+} from "./components/Combobox";
