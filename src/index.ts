@@ -15,6 +15,11 @@ export { Checkbox, type CheckboxProps } from "./components/Checkbox";
 export { Chip, type ChipProps } from "./components/Chip";
 export { Radio, type RadioProps } from "./components/Radio";
 export { Search, type SearchProps } from "./components/Search";
+export {
+  SegmentedControl,
+  type SegmentedControlProps,
+  type SegmentedItem,
+} from "./components/SegmentedControl";
 export { Popover, type PopoverProps } from "./components/Popover";
 export { Drawer, type DrawerProps } from "./components/Drawer";
 export { Loader, type LoaderProps } from "./components/Loader";
