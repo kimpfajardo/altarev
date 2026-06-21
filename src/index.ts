@@ -18,6 +18,11 @@ export { Drawer, type DrawerProps } from "./components/Drawer";
 export { Loader, type LoaderProps } from "./components/Loader";
 export { Modal, type ModalProps } from "./components/Modal";
 export {
+  Pagination,
+  paginationRange,
+  type PaginationProps,
+} from "./components/Pagination";
+export {
   Dropdown,
   DropdownItem,
   type DropdownProps,
