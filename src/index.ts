@@ -15,6 +15,7 @@ export { Checkbox, type CheckboxProps } from "./components/Checkbox";
 export { Chip, type ChipProps } from "./components/Chip";
 export { Popover, type PopoverProps } from "./components/Popover";
 export { Drawer, type DrawerProps } from "./components/Drawer";
+export { Loader, type LoaderProps } from "./components/Loader";
 export {
   Dropdown,
   DropdownItem,
