@@ -62,6 +62,7 @@ export {
   type ToastPosition,
 } from "./components/Snackbar";
 export { Popover, type PopoverProps } from "./components/Popover";
+export { Tooltip, type TooltipProps } from "./components/Tooltip";
 export { Drawer, type DrawerProps } from "./components/Drawer";
 export { Loader, type LoaderProps } from "./components/Loader";
 export { Modal, type ModalProps } from "./components/Modal";
