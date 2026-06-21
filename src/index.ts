@@ -23,6 +23,19 @@ export {
 export { Select, type SelectProps } from "./components/Select";
 export { Switch, type SwitchProps } from "./components/Switch";
 export {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  DataTable,
+  selectionState,
+  type TableRowProps,
+  type TableCellProps,
+  type TableColumn,
+  type DataTableProps,
+} from "./components/Table";
+export {
   Snackbar,
   ToastProvider,
   useToast,
