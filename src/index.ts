@@ -12,3 +12,4 @@ export {
 export { Button, buttonVariants, type ButtonProps } from "./components/Button";
 export { Carousel, type CarouselProps } from "./components/Carousel";
 export { Checkbox, type CheckboxProps } from "./components/Checkbox";
+export { Chip, type ChipProps } from "./components/Chip";
