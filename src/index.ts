@@ -21,6 +21,7 @@ export {
   type SegmentedItem,
 } from "./components/SegmentedControl";
 export { Select, type SelectProps } from "./components/Select";
+export { Switch, type SwitchProps } from "./components/Switch";
 export {
   Snackbar,
   ToastProvider,
