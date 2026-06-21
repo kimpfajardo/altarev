@@ -2,36 +2,47 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --color-primary: #4e46b4;
-  --color-primary-tint: #4e46b41f;
-  --color-accent: #40a69f;
-  --color-background: #f5f5f5;
-  --color-surface: #ffffff;
-  --color-surface-raised: #ffffff;
-  --color-text: #000000;
-  --color-text-muted: #595d62;
-  --color-border: #e2e2e2;
-  --color-overlay: #0000008f;
-  --color-hover: #0000000a;
-}
+@layer altarev.tokens {
+  :root {
+    --color-primary: #4e46b4;
+    --color-primary-tint: #4e46b41f;
+    --color-accent: #40a69f;
+    --color-background: #f5f5f5;
+    --color-surface: #ffffff;
+    --color-surface-raised: #ffffff;
+    --color-text: #000000;
+    --color-text-muted: #595d62;
+    --color-border: #e2e2e2;
+    --color-overlay: #0000008f;
+    --color-hover: #0000000a;
 
-.dark {
-  --color-primary: #4e46b4;
-  --color-primary-tint: #4e46b452;
-  --color-accent: #40a69f;
-  --color-background: #0b0b0b;
-  --color-surface: #1f1f1f;
-  --color-surface-raised: #ffffff;
-  --color-text: #ffffff;
-  --color-text-muted: #595d62;
-  --color-border: #444444;
-  --color-overlay: #0000008f;
-  --color-hover: #ffffff14;
-}
+    --color-success: #2e7d32;
+    --color-success-tint: #2e7d321f;
+    --color-error: #d33030;
+    --color-error-tint: #d330301f;
+    --color-warning: #ffb319;
+    --color-warning-tint: #ffb3191f;
+    --color-info: #3448f0;
+    --color-info-tint: #3448f01f;
+    --color-input-error: #ff4e64;
 
-.dark {
-  --tw-shadow-color: rgb(0 0 0 / 0.6);
+    --font-altarev-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .dark {
+    --color-primary: #4e46b4;
+    --color-primary-tint: #4e46b452;
+    --color-accent: #40a69f;
+    --color-background: #0b0b0b;
+    --color-surface: #1f1f1f;
+    --color-surface-raised: #ffffff;
+    --color-text: #ffffff;
+    --color-text-muted: #595d62;
+    --color-border: #444444;
+    --color-overlay: #0000008f;
+    --color-hover: #ffffff14;
+    --tw-shadow-color: rgb(0 0 0 / 0.6);
+  }
 }
 
 @theme inline {
@@ -47,17 +58,17 @@
   --color-overlay: var(--color-overlay);
   --color-hover: var(--color-hover);
 
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-success: var(--color-success);
+  --color-success-tint: var(--color-success-tint);
+  --color-error: var(--color-error);
+  --color-error-tint: var(--color-error-tint);
+  --color-warning: var(--color-warning);
+  --color-warning-tint: var(--color-warning-tint);
+  --color-info: var(--color-info);
+  --color-info-tint: var(--color-info-tint);
+  --color-input-error: var(--color-input-error);
 
-  --color-success: #2e7d32;
-  --color-success-tint: #2e7d321f;
-  --color-error: #d33030;
-  --color-error-tint: #d330301f;
-  --color-warning: #ffb319;
-  --color-warning-tint: #ffb3191f;
-  --color-info: #3448f0;
-  --color-info-tint: #3448f01f;
-  --color-input-error: #ff4e64;
+  --font-sans: var(--font-altarev-sans);
 
   --text-3xs: 9px;
   --text-3xs--line-height: 16px;
