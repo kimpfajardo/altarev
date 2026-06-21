@@ -20,6 +20,14 @@ export {
   type SegmentedControlProps,
   type SegmentedItem,
 } from "./components/SegmentedControl";
+export {
+  Tabs,
+  TabList,
+  Tab,
+  TabPanel,
+  type TabsProps,
+  type TabProps,
+} from "./components/Tabs";
 export { Select, type SelectProps } from "./components/Select";
 export { Switch, type SwitchProps } from "./components/Switch";
 export {
