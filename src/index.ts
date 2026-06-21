@@ -30,6 +30,7 @@ export {
   type TabProps,
 } from "./components/Tabs";
 export { Select, type SelectProps } from "./components/Select";
+export { Textarea, type TextareaProps } from "./components/Textarea";
 export { Switch, type SwitchProps } from "./components/Switch";
 export {
   Table,
