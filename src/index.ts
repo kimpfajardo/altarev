@@ -23,6 +23,11 @@ export {
   type PaginationProps,
 } from "./components/Pagination";
 export {
+  Progress,
+  clampPercent,
+  type ProgressProps,
+} from "./components/Progress";
+export {
   Dropdown,
   DropdownItem,
   type DropdownProps,
