@@ -13,6 +13,7 @@ export { Button, buttonVariants, type ButtonProps } from "./components/Button";
 export { Carousel, type CarouselProps } from "./components/Carousel";
 export { Checkbox, type CheckboxProps } from "./components/Checkbox";
 export { Chip, type ChipProps } from "./components/Chip";
+export { Tag, type TagProps } from "./components/Tag";
 export { Radio, type RadioProps } from "./components/Radio";
 export { Search, type SearchProps } from "./components/Search";
 export {
