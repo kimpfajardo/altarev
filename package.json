@@ -1,7 +1,7 @@
 {
   "name": "altarev",
-  "version": "0.0.0",
-  "description": "React component library",
+  "version": "0.1.0",
+  "description": "A React + TypeScript + Tailwind CSS v4 component library",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -31,12 +31,17 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "react-day-picker": "^10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-day-picker": {
+      "optional": true
+    }
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "react-day-picker": "^10.0.1",
     "tailwind-merge": "^3.0.0"
   },
   "devDependencies": {
@@ -52,6 +57,7 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.4",
     "react": "^19.0.0",
+    "react-day-picker": "^10.0.1",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.0",
     "tsup": "^8.0.0",
@@ -59,7 +65,16 @@
     "typescript-eslint": "^8.61.1",
     "vitest": "^3.0.0"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "component-library",
+    "tailwindcss",
+    "tailwind",
+    "typescript",
+    "design-system"
+  ],
   "license": "MIT",
   "lint-staged": {
     "*.{ts,tsx,js,mjs}": [

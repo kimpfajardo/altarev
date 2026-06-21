@@ -6,7 +6,8 @@ export default defineConfig({
   dts: true,
   clean: true,
   treeshake: true,
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", "react-day-picker"],
 
-  onSuccess: "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+  onSuccess:
+    "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && node scripts/add-use-client.mjs",
 });
