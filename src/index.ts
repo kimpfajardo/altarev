@@ -64,6 +64,14 @@ export {
 } from "./components/Snackbar";
 export { Popover, type PopoverProps } from "./components/Popover";
 export { Tooltip, type TooltipProps } from "./components/Tooltip";
+export {
+  Sidebar,
+  SidebarSection,
+  SidebarItem,
+  type SidebarProps,
+  type SidebarSectionProps,
+  type SidebarItemProps,
+} from "./components/Sidebar";
 export { Calendar, type CalendarProps } from "./components/Calendar";
 export { TimePicker, type TimePickerProps } from "./components/TimePicker";
 export {
