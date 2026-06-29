@@ -1,5 +1,5 @@
 {
-  "name": "altarev",
+  "name": "@crimson_/altarev",
   "version": "1.0.0",
   "description": "A React + TypeScript + Tailwind CSS v4 component library",
   "type": "module",
