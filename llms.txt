@@ -1,0 +1,132 @@
+# altarev
+
+> A React 18+/19 + TypeScript + Tailwind CSS v4 component library. 37 accessible, themeable components built on native HTML elements. Themed entirely through CSS custom properties — consumers override token *values*, never class names.
+
+This file tells an AI agent how to consume altarev without mistakes. Read the rules before writing code. Every rule exists because skipping it produces broken output.
+
+## The two rules that break everything if missed
+
+1. **Import the stylesheet exactly once, at your app root.** Without it, every component renders unstyled and the failure is silent (no error, just no styles).
+   ```ts
+   import "altarev/styles.css";
+   ```
+2. **To theme, override token *values* in a plain `:root` block placed *after* the import. Never wrap overrides in `@layer`. Never edit class names.** A wrapped or mis-ordered override silently loses to the default.
+
+If you only remember those two, the rest follows.
+
+## Install
+
+```bash
+npm install altarev
+```
+
+- `react` and `react-dom` (>=18) are required peer deps. (React 19 is fine.)
+- `react-day-picker` (^10) is an **optional** peer dep. Install it **only if** you use `Calendar`, `DateRangePicker`, or `TimePicker`. The other 34 components do not need it. If you use a date component without it installed, the import will fail.
+- You do **not** need Tailwind installed in the consuming app. The stylesheet is self-contained (ships the full token layer as CSS variables).
+
+## Import surface
+
+Everything is a named export from the package root `"altarev"`. There are **no deep imports** (no `altarev/components/Button`). One CSS path only: `"altarev/styles.css"`.
+
+```tsx
+import { Button, TextInput, Tooltip } from "altarev";
+```
+
+All components are client components (`"use client"`). They can be imported directly into React Server Components / Next.js App Router pages without a wrapper.
+
+## Theming — the full contract
+
+Every color resolves through a CSS custom property at runtime. You change the **value**; altarev owns the **name** so all components stay consistent.
+
+Correct (the only correct shape):
+```css
+@import "altarev/styles.css"; /* import FIRST */
+
+:root {
+  --color-primary: #e11d48;   /* your brand */
+  --color-surface: #fffaf5;
+  --color-text: #1a1208;
+}
+```
+Why it works without `!important`: altarev's defaults live in `@layer altarev.tokens`. Per the CSS spec, any **un-layered** `:root` automatically beats a layered one. So a plain `:root` after the import always wins. This is the whole trick — do not fight it with specificity hacks.
+
+Bundler variant (same idea, order is what matters):
+```ts
+import "altarev/styles.css";
+import "./theme.css"; // your :root overrides, loaded after
+```
+
+### Dark mode
+Toggle a `.dark` class anywhere up the tree (usually `<html>`). Override the dark palette with a matching un-layered `.dark` block after the import:
+```css
+@import "altarev/styles.css";
+:root  { --color-primary: #e11d48; }
+.dark  { --color-primary: #fb7185; }
+```
+
+### Tokens you may override (copy names exactly — a typo silently no-ops)
+Colors accept any CSS color (`#hex`, `rgb()`, `hsl()`, `oklch()`):
+`--color-primary`, `--color-primary-tint`, `--color-accent`, `--color-background`, `--color-surface`, `--color-surface-raised`, `--color-text`, `--color-text-muted`, `--color-border`, `--color-overlay`, `--color-hover`, `--color-success`, `--color-success-tint`, `--color-error`, `--color-error-tint`, `--color-warning`, `--color-warning-tint`, `--color-info`, `--color-info-tint`, `--color-input-error`.
+
+Font family: `--font-altarev-sans` (e.g. `"Inter", system-ui, sans-serif`).
+
+### Theming DON'Ts (each is a real failure mode)
+- ❌ Don't wrap overrides in `@layer { ... }` — they re-enter competition with defaults and may lose.
+- ❌ Don't put the override block *before* the import.
+- ❌ Don't edit/remap Tailwind utility names (`bg-primary`, `text-primary`, …) or the `@theme` block. Change the value the name points to, not the name.
+- ❌ Don't override the type **scale** (`--text-xs` … `--text-8xl`). It's intentionally fixed so spacing stays consistent. Override the font family only.
+- ❌ Don't invent token names. `--color-primry` (typo) does nothing and the component keeps the default. Copy from the list above.
+
+## Components (37) and their exports
+
+Default usage: `import { X } from "altarev"`. Compound components below export their sub-parts as **separate named exports** from the root — you must import each part you use.
+
+Simple (single export): `Accordion`, `Alert`, `Avatar`, `AuthCode`, `Button` (also `buttonVariants`), `Carousel`, `Checkbox`, `Chip`, `Container`, `Drawer`, `EmptyState`, `Loader`, `Modal`, `Popover`, `QuarterPicker`, `Radio`, `Search`, `Select`, `SegmentedControl`, `Switch`, `Tag`, `Textarea`, `TextInput`, `TimePicker`, `Tooltip`, `Calendar`.
+
+Compound (import every part you use):
+- **Tabs**: `Tabs`, `TabList`, `Tab`, `TabPanel`
+- **Table**: `Table`, `TableHead`, `TableBody`, `TableRow`, `TableCell`, plus `DataTable` (a higher-level table driven by a `columns` prop) and the `selectionState` helper. Use `DataTable` for data-driven tables; use the primitives for hand-built markup.
+- **Sidebar**: `Sidebar`, `SidebarSection`, `SidebarItem`
+- **TextInputGroup**: `TextInputGroup`, `GroupField`
+- **Dropdown**: `Dropdown`, `DropdownItem`
+- **Snackbar/toasts**: wrap your app in `ToastProvider`, then call `useToast()` inside components to fire toasts. `Snackbar` is the visual; `ToastOptions`/`ToastPosition` type the API.
+
+Helper exports you can use directly: `cn` (className merge: clsx + tailwind-merge), `paginationRange`, `clampPercent`, `filterOptions`, `presetRanges`, `defaultPresets`. `Combobox` ships `filterOptions`; `Pagination` ships `paginationRange`.
+
+### How to get exact props
+**Don't guess prop names.** Every component ships a `type XProps` export and full `.d.ts` types. Read `node_modules/altarev/dist/index.d.ts` (or hover types via the TS server) for the authoritative signature before writing props. Props are typed; rely on the types, not assumptions.
+
+## Minimal correct example (end to end)
+
+```tsx
+// app root (e.g. layout / main entry) — import once
+import "altarev/styles.css";
+
+import { ToastProvider, Button, Tooltip, useToast } from "altarev";
+
+function SaveButton() {
+  const { toast } = useToast(); // shape per ToastOptions in the .d.ts — verify before use
+  return (
+    <Tooltip content="Saves your changes">
+      <Button onClick={() => toast({ message: "Saved" })}>Save</Button>
+    </Tooltip>
+  );
+}
+
+export function App() {
+  return (
+    <ToastProvider>
+      <SaveButton />
+    </ToastProvider>
+  );
+}
+```
+
+## Pre-flight checklist before you ship altarev code
+- [ ] `import "altarev/styles.css"` exists once at app root.
+- [ ] Using a date component? `react-day-picker` is installed.
+- [ ] Theme overrides are in an **un-layered** `:root`/`.dark`, placed **after** the import.
+- [ ] No `@layer` around overrides; no edited class names; no renamed tokens.
+- [ ] Compound components: every sub-part imported from `"altarev"`.
+- [ ] Toasts: app wrapped in `ToastProvider`.
+- [ ] Prop names verified against `dist/index.d.ts`, not guessed.

@@ -18,7 +18,8 @@
     "**/*.css"
   ],
   "files": [
-    "dist"
+    "dist",
+    "llms.txt"
   ],
   "scripts": {
     "build": "tsup",
