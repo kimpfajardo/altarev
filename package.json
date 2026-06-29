@@ -1,6 +1,6 @@
 {
   "name": "@crimson_/altarev",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A React + TypeScript + Tailwind CSS v4 component library",
   "type": "module",
   "main": "./dist/index.cjs",
