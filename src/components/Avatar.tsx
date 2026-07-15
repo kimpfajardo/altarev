@@ -26,14 +26,7 @@ const badgeCorner = {
   bl: "bottom-0 left-0",
 } as const;
 
-const badgeSize = {
-  xs: "size-1 border-2",
-  sm: "size-2 border-2",
-  md: "size-2 border-2",
-  lg: "size-3 border-4",
-  xl: "size-3 border-4",
-  "2xl": "size-3 border-4",
-} as const;
+const badgeSize = "size-[20px] border-2";
 
 export interface AvatarProps
   extends
@@ -72,7 +65,7 @@ export function Avatar({
           className={cn(
             "absolute rounded-full border-background",
             badgeCorner[badge],
-            badgeSize[size ?? "md"],
+            badgeSize,
             badgeColor,
           )}
         />
